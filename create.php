@@ -1,25 +1,43 @@
-<?php
-include 'db_connection.php';
-if($_POST)
-{
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $contact=$POST['contact'];
-    $age=$POST['age'];
+<html>
+<body>
+<style>
+fieldset {
+			margin: auto;
+			margin-top: 100px;
+			width: 50%;
+		}
 
-    $sql="INSERT INTO members (fname,lname,contact,age)VALUES('$fname','$lname','$contact',$age)";
-    if($connect->query($sql)===TRUE)
-    {
-        echo "<p>New Record Successfully Created</p>";
-        //echo "<a href='../create.php'><button type='button'">;
-        echo "";
-    }
-    else
-    {
-        echo "Error" . $sql.' ' .$connect->connect_error;
-    
-    }
-    $connect->close();
-}
+		table tr th {
+			padding-top: 20px;
+		}
+</style>
+<fieldset>
+<legend>Add Member</legend>
+<form action="php_action/create.php" method="post">
+<table>
+<tr>
+<th>First Name:</th>
+<td><input type="text" name="fname" placeholder="First Name"></td>
+</tr>
+<tr>
+<th>Last Name:</th>
+<td><input type="text" name="lname" placeholder="Last Name"></td>
+</tr>
+<tr>
+<th>Contact No:</th>
+<td><input type="text" name="contact" placeholder="Contact No"></td>
+</tr>
+<tr>
+<th>Age:</th>
+<td><input type="text" name="age" placeholder="Age"></td>
+</tr>
+<tr>
+<td><button type="submit">Save Change</button></td>
+<td><a href="create.php"><button type="button">Back</button></a></td>
+</tr>
 
-?>
+</table>
+</form>
+</fieldset>
+</body>
+</html>

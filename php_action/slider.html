@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  </head>
+  <script>
+  $(document).ready(function() {
+    $('#callback').lightSlider({
+      onBeforeStart: function (el) {
+          console.log('onBeforeStart',el);
+      },
+      onSliderLoad: function (el) {
+          el.addClass('classAddedBeforeSliderLoad');
+      },
+      onBeforeSlide: function (el) {
+          alert('onBeforeSlide');
+      },
+      onAfterSlide: function (el) {
+          alert('onAfterSlide');
+      },
+      onBeforeNextSlide: function (el) {
+          alert('onBeforeNextSlide');
+      },
+      onBeforePrevSlide: function (el) {
+          alert('onBeforePrevSlide');
+      }
+  });
+  });
+</script>
+</body>
+
+</html>
