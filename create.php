@@ -32,6 +32,11 @@ fieldset {
 <td><input type="text" name="age" placeholder="Age"></td>
 </tr>
 <tr>
+<th>Gender:</th>
+<td><input type="radio" name="gender" value="male"></td>
+<td><input type="radio" name="gender" value="fmale"></td>
+</tr>
+<tr>
 <td><button type="submit">Save Change</button></td>
 <td><a href="create.php"><button type="button">Back</button></a></td>
 </tr>
