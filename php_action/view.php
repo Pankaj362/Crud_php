@@ -34,6 +34,8 @@
 				<th>Age</th>
 				<th>Contact</th>
 				<th>Email</th>
+				<th>Gender</th>
+				<th>Role</th>
 				<th>edit</th>
 				<th>delete</th>
 				
@@ -57,6 +59,8 @@ if ($result->num_rows > 0) {
 		<td><?php echo $row['age'];?></td>
 		<td><?php echo $row['contact'];?></td>
 		<td><?php echo $row['mail'];?></td>
+		<td><?php echo $row['gender'];?></td>
+		<td><?php echo $row['role'];?></td>
 
 <td><a href='edit.php?id=<?php echo $row['id'] ?>'> Edit </a> </td>
 <td><a href='delect.php?id=<?php echo $row['id'] ?>'> Delect </a> </td>

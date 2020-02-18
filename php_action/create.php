@@ -7,7 +7,11 @@ if($_POST)
     $contact=$_POST['contact'];
     $age=$_POST['age'];
     $mail=$_POST['mail'];
+    $gender=$_POST['gender'];
+    $role=$_POST['role'];
 
+    $str_arr=implode('',$role);
+    $contact=$_POST['contact'];
     $sql="SELECT * FROM members WHERE mail='$mail'";
     $result=$connect->query($sql);
     if($result->num_rows > 0)
@@ -17,7 +21,7 @@ if($_POST)
         echo "<script type='text/javascript'>alert('$msg'); </script>";
     }
     else{
-    $sql="INSERT INTO members (fname,lname,contact,age,mail)VALUES('$fname','$lname','$contact',$age,'$mail')";
+    $sql="INSERT INTO members (fname,lname,contact,age,mail,gender,role)VALUES('$fname','$lname','$contact',$age,'$mail','$gender','$str_arr')";
     if($connect->query($sql)===TRUE)
     {
         echo "<p>New Record Successfully Created</p>";

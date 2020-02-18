@@ -56,10 +56,15 @@ $connect->close();
     <tr>
                  <th>Age:</th>
                 <td><input type="text" name="age" placeholder="Age" <?php echo $row['age'];?>></td>
+     <tr>           
                 <th>Email:</th>
                 <td><input type="email" name="mail" placeholder="Email" <?php echo $row['mail'];?>></td>
     </tr>
-
+    <tr>
+                 <th>Gender:</th>
+                <td><input type="radio" name="gender"><?php echo $row['gender'];?> Male
+                <input type="radio" name="gender"><?php echo $row['gender'];?> Female</td>
+    </tr>
     </tr>
     <tr>
 				<input type="hidden" name="id" value="<?php echo $row['id']?>" />
