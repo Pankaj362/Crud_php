@@ -15,9 +15,9 @@
 <p>Gender.</p>
 <input type="radio" name="gender" value="male">Male
 <input type="radio" name="gender" value="fmale">Female<br><br>
-<input type="checkbox" name="role" value="admin">Admin
-<input type="checkbox" name="role" value="subadmin">Sub Admin
-<input type="checkbox" name="role" value="user">User<br><br>
+<input type="checkbox" name="roll[]" value="admin">Admin
+<input type="checkbox" name="roll[]" value="subadmin">Sub Admin
+<input type="checkbox" name="roll[]" value="user">User<br><br>
 <button type="submit">Submit</button> 
 </form>
 </body>

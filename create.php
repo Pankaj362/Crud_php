@@ -37,6 +37,11 @@ fieldset {
 <td><input type="radio" name="gender" value="fmale"></td>
 </tr>
 <tr>
+<td><input type="checkbox" name="roll" value="admin">admin
+<input type="checkbox" name="roll" value="subadmin">subadmin
+<input type="checkbox" name="roll" value="user"></td>
+</tr>
+<tr>
 <td><button type="submit">Save Change</button></td>
 <td><a href="create.php"><button type="button">Back</button></a></td>
 </tr>

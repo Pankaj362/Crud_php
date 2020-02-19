@@ -4,16 +4,12 @@ include('db_connection.php');
 $sql = "SELECT * FROM members ";
 $result = $connect->query($sql);
 
-if ($result->num_rows > 0) {
-    // output data of each row
-$row = $result->fetch_array() ;
-
+if($_GET['id']) {
+    $id=$_GET['id'];
     
-} 
-else {
-    echo "0 results";
-}
-
+$sql="SELECT * FROM members WHERE id={$id}";
+$result=$connect->query($sql);
+$row = $result->fetch_assoc() ;
 $connect->close();
 ?>
 <!DOCTYPE html>
@@ -55,16 +51,25 @@ $connect->close();
     </tr>
     <tr>
                  <th>Age:</th>
-                <td><input type="text" name="age" placeholder="Age" <?php echo $row['age'];?>></td>
+                <td><input type="text" name="age" placeholder="Age" value="<?php echo $row['age'];?>"></td>
      <tr>           
                 <th>Email:</th>
-                <td><input type="email" name="mail" placeholder="Email" <?php echo $row['mail'];?>></td>
+                <td><input type="email" name="mail" placeholder="Email" value="<?php echo $row['mail'];?>"></td>
     </tr>
     <tr>
                  <th>Gender:</th>
-                <td><input type="radio" name="gender"><?php echo $row['gender'];?> Male
-                <input type="radio" name="gender"><?php echo $row['gender'];?> Female</td>
+                <td><input type="radio" name="gender"value="male" <?php if($row['gender']=="male") {echo "checked";}?>/> Male
+                <input type="radio" name="gender" value="fmale" <?php if( $row['gender']=="fmale") {echo "checked";}?>/> Female</td>
     </tr>
+    <?php 	$a=$row['roll'];
+				$role=explode(",",$a);
+	?>
+			<tr>
+				<th>roles</th> 
+				<td><input <?php if(in_array("Admin",$role)){echo "checked";}?> type="checkbox" name="$role[]" value="Admin"/>Admin</td>
+				<td><input <?php if(in_array("Subadmin",$role)){echo "checked";}?> type="checkbox" name="$role[]" value="Subadmin"/>subadmin</td>
+				<td><input <?php if(in_array("User",$role)){echo "checked";}?> type="checkbox" name="$role[]" value="User"/>user</td>
+			</tr>
     </tr>
     <tr>
 				<input type="hidden" name="id" value="<?php echo $row['id']?>" />
@@ -77,3 +82,6 @@ $connect->close();
 
 </body>
 </html>
+<?php
+}
+?>

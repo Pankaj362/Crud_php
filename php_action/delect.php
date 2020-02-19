@@ -3,7 +3,7 @@ require_once 'db_connection.php';
 
 if($_GET['id']){
     $id=$_GET['id'];
-$sql="SELECT * FROM members WHERE  id={$id}";    
+$sql="SELECT * FROM members WHERE id={$id}";    
 $result=$connect->query($sql);
 $data=$result->fetch_assoc();
 $connect->close();
