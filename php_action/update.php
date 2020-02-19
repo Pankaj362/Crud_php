@@ -7,9 +7,9 @@ $age=$_POST['age'];
 $contact=$_POST['contact'];
 $mail=$_POST['mail'];
 $gender=$_POST['gender'];
-$roler['roll'];
+$roll['roll'];
 $id=$_POST['id'];
-$sql="UPDATE members SET id='$id',`fname`='$fname',lname='$lname',contact='$contact',age='$age',mail='$mail',gender='$gender',roll='$roler' WHERE id={$id}";
+$sql="UPDATE members SET id='$id',fname='$fname',lname='$lname',contact='$contact',age='$age',mail='$mail',gender='$gender',roll='$roll' WHERE id={$id}";
 //print_r($sql); die;   
 if($connect->query($sql)===TRUE){
 
