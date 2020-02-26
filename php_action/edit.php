@@ -65,16 +65,15 @@ $connect->close();
 				$role=explode(",",$a);
 	?>
 			<tr>
-				<th>roles</th> 
-				<td><input type="checkbox" name="$role[]" value="Admin"/>Admin
-                <?php if(in_array("Admin",$role)){echo "checked";}?></td>
-				<td><input <?php if(in_array("Subadmin",$role)){echo "checked";}?> type="checkbox" name="$role[]" value="Subadmin"/>subadmin</td>
+				<th>Roles</th> 
+				<td><input type="checkbox" name="$role[]" value="Admin"/>Admin<?php if(in_array("Admin",$role)){echo "checked";}?></td>
+				<td><input <?php if(in_array("Subadmin",$role)){echo "checked";}?>type="checkbox" name="$role[]" value="Subadmin"/>subadmin</td>
 				<td><input <?php if(in_array("User",$role)){echo "checked";}?> type="checkbox" name="$role[]" value="User"/>user</td>
 			</tr>
-    </tr>
+    
     <tr>
 				<input type="hidden" name="id" value="<?php echo $row['id']?>" />
-                <td><input type="submit" value="Save Changes"></td>
+                <td><button type="submit" value="Save Changes">Submit </button></td>
     </tr>
 		</table>
 	</form>
